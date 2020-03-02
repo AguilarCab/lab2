@@ -26,3 +26,16 @@
 {
     display: none;
 }
+
+fieldset label
+{
+    display:block;
+} 
+
+dieldset input 
+{
+   
+    display:block;           
+    margin-bottom : 5px;
+ }
+/*LABEL Y INPUT ES DISEÑO DE PAGINA7*
