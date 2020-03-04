@@ -19,7 +19,7 @@
     <form action= "/Video/Create" method= "post">
     
     <fieldset>
-    <Legend> Datos del Video</Legend>
+    <Legend> Datos del Video </Legend>
     
     <label for= "idVideo">idVideo<label>
     <input type= "text" name="idVideo" /> 

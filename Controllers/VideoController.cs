@@ -19,6 +19,8 @@ namespace MVCLaboratorio.Controllers
 
         public ActionResult Index()//Ver video//
         {
+
+            ViewData["Videos"] = BaseHelper.ejecutarConsulta("Select * from Videos", CommandType.Text);
             return View();
         }
 

@@ -15,7 +15,10 @@
 </head>
 <body>
     <h1> Menu de opciones  </h1>
-    <a href="/Video/Create">Agregar Video</a>
+    <a href="/Video/Create"> Agregar Video </a>
+    </br>
+    </br>
+    <a href="/Video/Index"> Lista de videos </a>
           
 </body>
 </html>
