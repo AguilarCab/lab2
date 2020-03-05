@@ -38,6 +38,46 @@ namespace MVCLaboratorio.Utilerias
                 con.Close();
             } //finally	
             return filas;
+        } // funcion ejecutar sentencia 
+        
+
+
+        //
+        public static int ejecutarEliminar(String sentencia,
+                           CommandType tipo, out string mensaje,
+                           List<SqlParameter> parametros = null)
+        {
+            mensaje = string.Empty;
+            SqlConnection con = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            int filas;
+            filas = 0;
+            try
+            {
+                con.ConnectionString = ConfigurationManager.ConnectionStrings["cnn"].ConnectionString;
+                con.Open();
+                comando.Connection = con;
+                comando.CommandType = tipo;
+                comando.CommandText = sentencia;
+
+                if (parametros != null)
+                {
+                    comando.Parameters.AddRange(parametros.ToArray());
+                }
+
+                filas = comando.ExecuteNonQuery();
+            } //try
+            catch (Exception e) 
+            {
+                mensaje = e.Message; 
+            }
+
+
+            finally
+            {
+                con.Close();
+            } //finally	
+            return filas;
         } // funcion ejecutar sentencia  
 
         public static DataTable ejecutarConsulta(String sentencia,

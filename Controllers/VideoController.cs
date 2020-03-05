@@ -41,7 +41,7 @@ namespace MVCLaboratorio.Controllers
             parametros.Add(new SqlParameter("@repro", repro));
             parametros.Add(new SqlParameter("@url", url));
 
-
+            
             BaseHelper.ejecutarSentencia("sp_video_insertar", CommandType.StoredProcedure, parametros);
 
 
@@ -54,8 +54,23 @@ namespace MVCLaboratorio.Controllers
         }
         [HttpPost]
 
-        public ActionResult Delete(int idVideo)
+        public ActionResult Eliminarregistros()
         {
+            string error = string.Empty;
+            int registros = 0;
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            try
+            {
+                int idVideo = Convert.ToInt16(Request.Form["idVideo"]);
+                parametros.Add(new SqlParameter("@idVideo", idVideo));
+                registros = BaseHelper.ejecutarEliminar("DELETE FROM Videos " + " WHERE idVideo = @idVideo", CommandType.Text, out error, parametros);
+            }
+
+            catch (Exception e) 
+            {
+                error = e.Message;
+            }
+
             return View();
         }
 

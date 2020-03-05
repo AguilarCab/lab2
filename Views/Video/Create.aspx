@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-    <title>Registrar video</title>
+    <title> Registrar video </title>
 
   <meta charset="UTF-8">
   <meta name="description" content="ASP.NET MVC 2 CRUD Video">

@@ -19,6 +19,9 @@
     </br>
     </br>
     <a href="/Video/Index"> Lista de videos </a>
+    </br>
+    </br>
+    <a href="/Video/Delete"> Eliminar Videos </a>
           
 </body>
 </html>
